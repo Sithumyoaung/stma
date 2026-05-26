@@ -1,0 +1,156 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionTitle from "../components/ui/SectionTitle.astro";
+import { Image } from "astro:assets";
+
+import avatarLight from "../assets/images/profile/profile.jpg";
+import avatarDark from "../assets/images/profile/profile.jpg";
+
+const skillGroups = [
+  {
+    title: "Odoo Development",
+    items: ["Custom modules", "Workflow modules", "QWeb PDF prints", "Security and access flows"],
+  },
+  {
+    title: "Backend / Database",
+    items: ["Python", "PostgreSQL", "SQL", "Migration-safe extensions"],
+  },
+  {
+    title: "Reporting / Localization",
+    items: ["Accounting report customization", "Myanmar localization", "QWeb reports", "Business documents"],
+  },
+  {
+    title: "DevOps / Workflow",
+    items: ["Docker workflows", "Linux basics", "Git version control", "Development environment setup"],
+  },
+  {
+    title: "Product Direction",
+    items: ["ERP product thinking", "Open-source modules", "Technical presentation", "User-focused workflows"],
+  },
+];
+
+const personalInfo = [
+  { label: "Location", value: "Yangon, Myanmar" },
+  { label: "Languages", value: "Myanmar, English" },
+  { label: "Education", value: "Self-taught Software Developer" },
+  { label: "Goal", value: "Senior Odoo Developer · ERP Products · Open Source Modules" },
+];
+---
+
+<BaseLayout
+  description="About Thein Htoo Aung: Odoo developer, backend builder, and self-taught software developer from Yangon, Myanmar."
+  title="About | Thein Htoo Aung"
+>
+  <section class="py-10 sm:py-14">
+    <SectionTitle
+      description="I am an Odoo Developer and Backend Engineer focused on ERP workflows, Python backend development, localization, reporting, and practical business systems."
+      eyebrow="About"
+      title="Building business software that stays usable"
+    />
+
+    <div class="mt-10 grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+      <div class="theme-photo-frame surface-card overflow-hidden p-3">
+        <Image
+          src={avatarLight}
+          alt="Thein Htoo Aung portrait"
+          class="theme-photo theme-photo-light aspect-[4/5] w-full rounded-[20px] object-cover shadow-[0_40px_120px_rgba(0,0,0,0.25)] motion-safe:animate-[float_6s_ease-in-out_infinite]"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+          widths={[320, 480, 640, 800, 1040]}
+          sizes="(min-width: 1024px) 420px, 90vw"
+        />
+
+        <Image
+          src={avatarDark}
+          alt="Thein Htoo Aung portrait"
+          class="theme-photo theme-photo-dark aspect-[4/5] w-full rounded-[20px] object-cover shadow-[0_40px_120px_rgba(0,0,0,0.45)] motion-safe:animate-[float_6s_ease-in-out_infinite]"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+          widths={[320, 480, 640, 800, 1040]}
+          sizes="(min-width: 1024px) 420px, 90vw"
+        />
+      </div>
+
+      <div class="space-y-6">
+        <article class="surface-card p-6">
+          <p class="font-mono text-xs uppercase tracking-[0.24em] text-primary">Who I am</p>
+          <p class="mt-4 text-base leading-8 text-muted">
+            I build business software where backend engineering, ERP workflows, and practical operations meet. I prefer systems that remain understandable as complexity grows. My work focuses on making business processes explicit, reducing manual effort, and keeping interfaces usable.
+          </p>
+        </article>
+
+        <article class="surface-card p-6">
+          <p class="font-mono text-xs uppercase tracking-[0.24em] text-primary">What I build</p>
+          <p class="mt-4 text-base leading-8 text-muted">
+            I develop custom Odoo workflows, backend modules, QWeb PDF prints, accounting report customizations, localization tooling, and operational automation. Most of my work involves translating business requirements into maintainable implementations with clean user-facing experiences.
+          </p>
+        </article>
+
+        <article class="surface-card p-6">
+          <p class="font-mono text-xs uppercase tracking-[0.24em] text-primary">Current focus</p>
+          <p class="mt-4 text-base leading-8 text-muted">
+            Currently focused on Odoo 19 customization, ERP product development, Myanmar localization initiatives, open-source contributions, and growing toward senior-level backend and business system architecture.
+          </p>
+        </article>
+
+        <article class="surface-card p-6">
+          <p class="font-mono text-xs uppercase tracking-[0.24em] text-primary">Personal details</p>
+          <div class="mt-5 grid gap-4 sm:grid-cols-2">
+            {personalInfo.map((item) => (
+              <div class="rounded-[18px] border border-border bg-bg/55 p-4">
+                <p class="font-mono text-[0.7rem] uppercase tracking-[0.2em] text-muted">
+                  {item.label}
+                </p>
+                <p class="mt-2 text-sm font-semibold leading-6 text-text">
+                  {item.value}
+                </p>
+              </div>
+            ))}
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="pb-16 sm:pb-24">
+    <SectionTitle
+      description="A practical split between implementation skills and the presentation work needed to make business software understandable."
+      eyebrow="Skill Sets"
+      title="Technical and creative capabilities"
+    />
+
+    <div class="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+      {skillGroups.map((group) => (
+        <article class="surface-card p-6">
+          <h3 class="font-display text-2xl font-bold tracking-[-0.03em] text-text">
+            {group.title}
+          </h3>
+
+          <ul class="mt-4 space-y-3">
+            {group.items.map((item) => (
+              <li class="flex items-center gap-3 text-sm text-muted">
+                <span class="h-2 w-2 rounded-full bg-primary" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </article>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-14px);
+    }
+  }
+</style>

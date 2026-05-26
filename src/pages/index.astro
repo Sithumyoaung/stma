@@ -1,0 +1,126 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TypingTitle from "../components/home/TypingTitle.jsx";
+import BrandIcon from "../components/ui/BrandIcon.astro";
+import { Image } from "astro:assets";
+import { FileDown } from "lucide-react";
+
+import avatarLight from "../assets/images/profile/profile.jpg";
+import avatarDark from "../assets/images/profile/profile.jpg";
+---
+
+<BaseLayout title="Thein Htoo Aung | Portfolio">
+  <section class="grid min-h-[calc(100vh-80px)] items-center gap-8 pb-16 pt-8 sm:gap-10 sm:pb-20 sm:pt-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12 lg:py-[7.5rem] lg:pt-16">
+    <div class="order-2 fade-up lg:order-1">
+      <p class="font-mono text-sm uppercase tracking-[0.28em] text-secondary">Hi, I'm</p>
+
+      <h1 class="mt-3 font-display font-bold leading-[0.95] tracking-[-0.04em] text-text lg:mt-4">
+        <span class="block text-[48px] sm:text-[56px] lg:text-8xl">Thein Htoo</span>
+        <span class="neon-text block text-[58px] sm:text-[64px] lg:text-8xl">Aung</span>
+      </h1>
+
+      <div class="mt-5 lg:mt-7">
+        <TypingTitle client:load />
+      </div>
+
+      <p class="mt-6 max-w-2xl text-base leading-8 text-muted sm:text-lg lg:mt-7 lg:text-xl">
+        I build Odoo modules, Python backend systems, ERP workflow automation, and practical business software. I focus on turning operational requirements into maintainable systems while documenting technical work and staying available for freelance collaboration.
+      </p>
+
+      <div class="mt-7 flex flex-col gap-4 sm:flex-row lg:mt-9">
+        <a
+          class="cursor-hover inline-flex items-center justify-center gap-2 rounded-[24px] border border-primary bg-primary px-7 py-4 text-sm font-bold text-black shadow-glow hover:-translate-y-1 hover:bg-primary-hover"
+          href="/projects"
+        >
+          View Projects
+          <span aria-hidden="true">-&gt;</span>
+        </a>
+
+        <a
+          class="cursor-hover inline-flex items-center justify-center gap-2 rounded-[24px] border border-border bg-card/80 px-7 py-4 text-sm font-bold text-text hover:border-secondary/50 hover:text-secondary"
+          href="/Thein-Htoo-Aung-CV.pdf"
+        >
+          Download CV
+          <FileDown className="h-4 w-4" aria-hidden="true" />
+        </a>
+      </div>
+
+      <p class="mt-4 text-sm font-medium text-muted">
+        Open for freelance · Building public technical work
+      </p>
+
+      <div class="mt-6 flex gap-3 lg:mt-8">
+        <a
+          class="cursor-hover inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-border bg-card/75 font-mono text-sm font-bold text-muted hover:border-primary/50 hover:text-primary"
+          href="https://github.com/Zenonia-9"
+          rel="noreferrer"
+          target="_blank"
+          aria-label="GitHub"
+        >
+          <BrandIcon name="github" />
+        </a>
+
+        <a
+          class="cursor-hover inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-border bg-card/75 font-mono text-sm font-bold text-muted hover:border-primary/50 hover:text-primary"
+          href="https://www.linkedin.com/in/thein-htoo-aung"
+          rel="noreferrer"
+          target="_blank"
+          aria-label="LinkedIn"
+        >
+          <BrandIcon name="linkedin" />
+        </a>
+
+        <a
+          class="cursor-hover inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-border bg-card/75 font-mono text-sm font-bold text-muted hover:border-primary/50 hover:text-primary"
+          href="https://discord.com/users/1152421433528561734"
+          rel="noreferrer"
+          target="_blank"
+          aria-label="Discord"
+        >
+          <BrandIcon name="discord" />
+        </a>
+      </div>
+    </div>
+
+    <div class="relative order-1 mb-8 fade-up lg:order-2 lg:mb-0 lg:justify-self-end">
+      <div class="absolute inset-0 h-40 w-40 rounded-full bg-primary/30 blur-[42px] sm:h-[200px] sm:w-[200px] lg:inset-6 lg:h-auto lg:w-auto lg:blur-[90px]"></div>
+
+      <div class="theme-photo-frame relative h-40 w-40 overflow-hidden rounded-full border border-primary/30 bg-card/70 shadow-glow backdrop-blur sm:h-[200px] sm:w-[200px] lg:mx-auto lg:h-auto lg:w-auto lg:max-w-[520px] lg:rounded-[24px] lg:p-4">
+        <Image
+          src={avatarLight}
+          alt="Thein Htoo Aung portrait"
+          class="theme-photo theme-photo-light h-full w-full rounded-full object-cover object-center shadow-[0_40px_120px_rgba(0,0,0,0.25)] lg:aspect-[4/5] lg:h-auto lg:rounded-[20px] motion-safe:lg:animate-[float_6s_ease-in-out_infinite]"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+          widths={[160, 200, 320, 480, 640, 800, 1040]}
+          sizes="(min-width: 1024px) 520px, (min-width: 640px) 200px, 160px"
+        />
+
+        <Image
+          src={avatarDark}
+          alt="Thein Htoo Aung portrait"
+          class="theme-photo theme-photo-dark h-full w-full rounded-full object-cover object-center shadow-[0_40px_120px_rgba(0,0,0,0.45)] lg:aspect-[4/5] lg:h-auto lg:rounded-[20px] motion-safe:lg:animate-[float_6s_ease-in-out_infinite]"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+          widths={[160, 200, 320, 480, 640, 800, 1040]}
+          sizes="(min-width: 1024px) 520px, (min-width: 640px) 200px, 160px"
+        />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-14px);
+    }
+  }
+</style>

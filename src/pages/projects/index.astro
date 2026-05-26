@@ -1,0 +1,28 @@
+---
+import { getCollection } from "astro:content";
+import ProjectFilter from "../../components/projects/ProjectFilter.jsx";
+import SectionTitle from "../../components/ui/SectionTitle.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const projects = (await getCollection("projects", ({ data }) => data.published))
+  .filter((project) => project.data.title !== "Lady Astra Bot")
+  .sort((a, b) => b.data.year - a.data.year)
+  .map((project) => ({ ...project.data, slug: project.slug }));
+---
+
+<BaseLayout
+  title="Projects | Thein Htoo Aung"
+  description="Odoo, backend, localization, reporting, and workflow automation projects by Thein Htoo Aung."
+>
+  <section class="py-10 sm:py-14">
+    <SectionTitle
+      eyebrow="Projects"
+      title="Odoo modules, backend systems, and ERP workflow case studies"
+      description="Selected technical work focused on Odoo customization, Myanmar localization, QWeb reports, accounting report customization, inventory workflows, and backend-heavy business automation."
+    />
+
+    <div class="mt-10">
+      <ProjectFilter client:load projects={projects} />
+    </div>
+  </section>
+</BaseLayout>
