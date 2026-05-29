@@ -27,7 +27,7 @@ export default function Hero() {
           <TypingTitle />
 
           <h1 className="mt-6 max-w-4xl font-display text-5xl font-bold tracking-[-0.06em] text-text sm:text-6xl xl:text-7xl">
-            Hi, I&apos;m Htoo.
+            Hi, I&apos;m Si Thu.
             <span className="mt-3 block text-balance text-primary">
               Odoo Developer and Creative Technologist.
             </span>
@@ -71,7 +71,7 @@ export default function Hero() {
             </div>
             <div className="relative pt-12">
               <motion.img
-                alt="Thein Htoo Aung portrait"
+                alt="Si Thu Myo Aung portrait"
                 animate={{ y: [0, -10, 0] }}
                 className="mx-auto aspect-[4/4.5] w-full max-w-md rounded-[2rem] border border-border object-cover shadow-[0_35px_90px_rgba(0,0,0,0.35)]"
                 src="/images/profile/htoo-home.jpg"
