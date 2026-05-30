@@ -7,27 +7,27 @@
 :root {
   color-scheme: light;
 
-  --bg: 236 220 190;
-  --bg-elevated: 250 240 222;
+  --bg: 240 245 240;
+  --bg-elevated: 248 252 248;
 
-  --card: 255 248 236;
-  --card-hover: 246 232 210;
+  --card: 255 255 255;
+  --card-hover: 245 250 245;
 
-  --text: 22 18 14;
-  --muted: 88 78 66;
+  --text: 20 30 20;
+  --muted: 80 100 80;
 
-  --border: 205 188 166;
+  --border: 200 215 200;
 
-  --primary: 174 128 78;
-  --primary-hover: 142 96 48;
-  --primary-soft: 244 226 198;
+  --primary: 76 175 80;
+  --primary-hover: 56 142 60;
+  --primary-soft: 232 245 233;
 
-  --secondary: 120 86 55;
-  --secondary-hover: 88 58 34;
-  --secondary-soft: 238 218 190;
+  --secondary: 139 195 74;
+  --secondary-hover: 104 159 56;
+  --secondary-soft: 241 248 233;
 
-  --shadow-soft: 0 24px 60px rgba(80, 62, 45, 0.1);
-  --shadow-glow: 0 0 0 1px rgba(174, 128, 78, 0.18), 0 22px 70px rgba(174, 128, 78, 0.14);
+  --shadow-soft: 0 24px 60px rgba(60, 100, 60, 0.1);
+  --shadow-glow: 0 0 0 1px rgba(76, 175, 80, 0.18), 0 22px 70px rgba(76, 175, 80, 0.14);
 
   --font-display: "Space Grotesk", "IBM Plex Sans", sans-serif;
   --font-body: "IBM Plex Sans", "Segoe UI", sans-serif;
@@ -36,21 +36,21 @@
 
 .dark {
   color-scheme: dark;
-  --bg: 5 3 12;
-  --bg-elevated: 10 6 22;
-  --card: 18 11 34;
-  --card-hover: 29 17 54;
-  --text: 250 247 255;
-  --muted: 187 174 211;
-  --border: 70 47 105;
-  --primary: 190 103 255;
-  --primary-hover: 213 154 255;
-  --primary-soft: 48 25 82;
-  --secondary: 63 218 255;
-  --secondary-hover: 136 235 255;
-  --secondary-soft: 12 54 72;
+  --bg: 10 20 10;
+  --bg-elevated: 15 30 15;
+  --card: 25 40 25;
+  --card-hover: 35 55 35;
+  --text: 240 250 240;
+  --muted: 180 210 180;
+  --border: 60 90 60;
+  --primary: 102 187 106;
+  --primary-hover: 129 199 132;
+  --primary-soft: 30 60 30;
+  --secondary: 174 213 129;
+  --secondary-hover: 200 230 160;
+  --secondary-soft: 20 45 20;
   --shadow-soft: 0 28px 80px rgba(0, 0, 0, 0.42);
-  --shadow-glow: 0 0 0 1px rgba(190, 103, 255, 0.3), 0 28px 80px rgba(151, 71, 255, 0.24), 0 0 42px rgba(63, 218, 255, 0.09);
+  --shadow-glow: 0 0 0 1px rgba(102, 187, 106, 0.3), 0 28px 80px rgba(76, 175, 80, 0.24), 0 0 42px rgba(174, 213, 129, 0.09);
 }
 
 html {
@@ -71,9 +71,9 @@ html {
 body {
   min-height: 100vh;
   background:
-    radial-gradient(circle at top left, rgba(177, 92, 255, 0.18), transparent 30%),
-    radial-gradient(circle at top right, rgba(63, 218, 255, 0.12), transparent 26%),
-    radial-gradient(circle at 50% 8%, rgba(120, 50, 255, 0.16), transparent 34%),
+    radial-gradient(circle at top left, rgba(76, 175, 80, 0.18), transparent 30%),
+    radial-gradient(circle at top right, rgba(139, 195, 74, 0.12), transparent 26%),
+    radial-gradient(circle at 50% 8%, rgba(56, 142, 60, 0.16), transparent 34%),
     linear-gradient(180deg, rgb(var(--bg-elevated)) 0%, rgb(var(--bg)) 100%);
   color: rgb(var(--text));
   font-family: var(--font-body);
@@ -170,8 +170,8 @@ textarea:focus-visible {
   background:
     linear-gradient(
       135deg,
-      rgba(236, 220, 190, 0.22),
-      rgba(174, 128, 78, 0.1)
+      rgba(240, 245, 240, 0.22),
+      rgba(76, 175, 80, 0.1)
     );
   mix-blend-mode: multiply;
 }
@@ -187,17 +187,17 @@ textarea:focus-visible {
 
 .dark .theme-photo-frame {
   box-shadow:
-    0 0 0 1px rgba(190, 103, 255, 0.35),
-    0 30px 90px rgba(151, 71, 255, 0.28),
-    0 0 70px rgba(190, 103, 255, 0.18);
+    0 0 0 1px rgba(102, 187, 106, 0.35),
+    0 30px 90px rgba(76, 175, 80, 0.28),
+    0 0 70px rgba(102, 187, 106, 0.18);
 }
 
 .dark .theme-photo-frame::after {
   background:
     linear-gradient(
       135deg,
-      rgba(190, 103, 255, 0.2),
-      rgba(63, 218, 255, 0.06)
+      rgba(102, 187, 106, 0.2),
+      rgba(174, 213, 129, 0.06)
     );
   mix-blend-mode: screen;
 }
